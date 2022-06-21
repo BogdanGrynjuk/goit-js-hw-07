@@ -31,5 +31,5 @@ function onGalleryClick(event) {
     captionDelay: 250
   });
 
-  lightbox.open()  
+  // lightbox.open();  
 }

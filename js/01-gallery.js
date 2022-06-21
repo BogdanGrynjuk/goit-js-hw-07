@@ -42,7 +42,7 @@ function onGalleryClick(event) {
 }
 
 function onDocumentKeyDown(event) {
-  if (event.code === 'Escape') {    
+  if (event.code === 'Escape' && instance.visible()) {    
     instance.close();    
   }
 }
