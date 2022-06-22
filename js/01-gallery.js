@@ -7,7 +7,7 @@ let instance;
 gallery.insertAdjacentHTML("afterbegin", createGalleryItemsMarkup(galleryItems));
 
 gallery.addEventListener('click', onGalleryClick);
-document.addEventListener('keydown', onDocumentKeyDown);
+document.addEventListener('keydown', onDocumentKeyDownEsc);
 
 function createGalleryItemsMarkup (galleryItems) {
   return galleryItems
@@ -41,7 +41,7 @@ function onGalleryClick(event) {
   instance.show();
 }
 
-function onDocumentKeyDown(event) {
+function onDocumentKeyDownEsc(event) {
   if (event.code === 'Escape' && instance.visible()) {    
     instance.close();    
   }
