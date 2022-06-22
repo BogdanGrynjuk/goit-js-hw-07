@@ -8,6 +8,11 @@ const gallery = document.querySelector('.gallery');
 gallery.insertAdjacentHTML("afterbegin", createGalleryItemsMarkup(galleryItems));
 gallery.addEventListener('click', onGalleryClick);
 
+const lightbox = new SimpleLightbox('.gallery a', {
+    captionsData: 'alt',
+    captionDelay: 250
+});
+
 function createGalleryItemsMarkup(galleryItems) {
   return galleryItems
     .map(({ preview, original, description }) => {
@@ -25,11 +30,4 @@ function onGalleryClick(event) {
   if (!event.target.classList.contains('gallery__image')) {
     return;
   };
-  
-  let lightbox = new SimpleLightbox('.gallery a', {
-    captionsData: 'alt',
-    captionDelay: 250
-  });
-
-  // lightbox.open();  
 }
